@@ -91,5 +91,4 @@ def create_all_sh_raport(name_doc, name_dict: dict, data_dict: dict, data_start:
         print(f'ОТЧЕТ_МОНИТОРИНГ {name}.docx')
 
 
-
 create_all_sh_raport("raport_biha", school_name, filterest_all_sh, "2023-09-01", "2024-03-01", "2024-02-01")
