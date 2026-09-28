@@ -17,6 +17,7 @@ dp = Dispatcher()
 async def cmd_stars(message: Message):
     kb = [
         [KeyboardButton(text="Сгенерировать отчеты для всех школ")],
+        [KeyboardButton(text="Получить данные по одному тренеру")],
         [KeyboardButton(text="Что в разработке?")]
     ]
     keyboard = ReplyKeyboardMarkup(
@@ -24,6 +25,13 @@ async def cmd_stars(message: Message):
         keyboard=kb
     )
     await message.answer("Что делаем?", reply_markup=keyboard)
+
+
+@dp.message(F.text == "Получить данные по одному тренеру")
+async def cmd_stars(message: Message):
+    await message.answer("Введите промежуток времени за который нужно получить данные\nВ формате YYYY-MM-DD где первая дата начало периода, вторая дата - конец периода")
+    pass
+
 
 @dp.message(F.text.lower() == "сгенерировать отчеты для всех школ")
 async def start_generator(message: Message):

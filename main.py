@@ -10,6 +10,9 @@ from analyzer.data_analysis import (
     filter_by_coach_in_school,
     sort_rank_school,
 )
+
+from telegram_bot.def_create_sms import one_coach_sms
+
 from test_def.tests import test_cake, test_look
 from typewriter.writer import over_coach_block, sh_block
 
@@ -19,6 +22,9 @@ from docx.shared import Cm, Pt
 
 work_in_dict = create_dict(data_list_chek, questions)
 transformed_dict = data_transform(work_in_dict)
+
+
+
 
 
 def currunt_month(data_dict, data_start, data_end):
@@ -134,3 +140,8 @@ def create_one_sh_raport(name_doc, name_dict: dict, name_sh, data_dict: dict, da
 
     name_doc.save(f'ОТЧЕТ_МОНИТОРИНГ {name}.docx')
     print(f'ОТЧЕТ_МОНИТОРИНГ {name}.docx')
+
+sh_dict, coath_dict, rank_coach = currunt_month(transformed_dict, '2024-09-01', '2024-12-01')
+
+create_all_sh_raport("raport_sh", school_name, transformed_dict, '2023-09-01', '2024-01-01', '2023-12-01')
+# print(one_coach_sms(coath_dict, rank_coach, school_name, 'ГУ «ХК «Брест» ОСП «СДЮШОР по хоккею с шайбой и фигурному катанию»', 'Гук Валентин Сергеевич'))
