@@ -24,9 +24,6 @@ work_in_dict = create_dict(data_list_chek, questions)
 transformed_dict = data_transform(work_in_dict)
 
 
-
-
-
 def currunt_month(data_dict, data_start, data_end):
 
     filterest_sh = filter_full_schools(data_dict)
@@ -95,8 +92,8 @@ def create_all_sh_raport(name_doc, name_dict: dict, data_dict: dict, data_start:
         over_coach_block(name_doc, coach_one_sh, coach_rank_currunt_month, name)
 
 
-        name_doc.save(f'ОТЧЕТ_МОНИТОРИНГ {name}.docx')
-        print(f'ОТЧЕТ_МОНИТОРИНГ {name}.docx')
+        name_doc.save(f'{name} период c {data_start} до {data_end_current_month}.docx')
+        print(f'{name} период c {data_start} до {data_end_current_month}.docx')
 
 
 def create_one_sh_raport(name_doc, name_dict: dict, name_sh, data_dict: dict, data_start: str, data_end_current_month: str, data_end_past_month: str):
@@ -138,10 +135,10 @@ def create_one_sh_raport(name_doc, name_dict: dict, name_sh, data_dict: dict, da
     over_coach_block(name_doc, coach_one_sh, coach_rank_currunt_month, name_sh)
 
 
-    name_doc.save(f'ОТЧЕТ_МОНИТОРИНГ {name}.docx')
-    print(f'ОТЧЕТ_МОНИТОРИНГ {name}.docx')
+    name_doc.save(f'{name} период c {data_start} до {data_end_current_month}.docx')
+    print(f'{name} период c {data_start} до {data_end_current_month}.docx')
 
 sh_dict, coath_dict, rank_coach = currunt_month(transformed_dict, '2024-09-01', '2024-12-01')
 
-create_all_sh_raport("raport_sh", school_name, transformed_dict, '2023-09-01', '2024-01-01', '2023-12-01')
+create_all_sh_raport("raport_sh", school_name, transformed_dict, '2023-09-01', '2026-07-01', '2026-06-01')
 # print(one_coach_sms(coath_dict, rank_coach, school_name, 'ГУ «ХК «Брест» ОСП «СДЮШОР по хоккею с шайбой и фигурному катанию»', 'Гук Валентин Сергеевич'))

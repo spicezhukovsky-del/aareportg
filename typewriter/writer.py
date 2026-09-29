@@ -43,6 +43,8 @@ def create_schedule(name_doc, list_data_x, list_data_y, name_schedule, name_x, n
         ax_sh.xaxis.set_major_locator(ticker.MultipleLocator(10))
     elif len(list_data_x) > 100:
         ax_sh.xaxis.set_major_locator(ticker.MultipleLocator(20))
+    elif len(list_data_x) > 300:
+        ax_sh.xaxis.set_major_locator(ticker.MultipleLocator(50))
 
     schedule_sh = io.BytesIO()
     plt.savefig(schedule_sh, format='png', dpi=300, bbox_inches='tight')
