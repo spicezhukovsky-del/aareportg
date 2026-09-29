@@ -77,7 +77,7 @@ def over_coach_block(name_doc, dict_data, rank_dict, name_school):
         run.bold = True
         run.font.size = Pt(16)
 
-        bade_text = paragr_name.add_run(f"В этом месяце просмотренно {total_look} тренеровки, получил средний балл {mean_grade}. В этом месяце данный тренер занял {positions_coach} место в рейтенге состоящем из {len_list_rank} мест.")
+        bade_text = paragr_name.add_run(f"В этом месяце просмотрено {total_look} тренировки, получен средний балл {mean_grade}. В этом месяце данный тренер занял {positions_coach} место в рейтинге, состоящем из {len_list_rank} мест.")
         bade_text.font.size = Pt(14)
 
 
@@ -156,12 +156,12 @@ def sh_block(name_doc, data_dict_one_sh, current_month_rank_dict, name_sh, id_sh
 
     bade_text = name_doc.add_paragraph()
     if past_month_rank_dict is not None:
-        bade_text_run = bade_text.add_run(f"В этом месяце просмотренно {count_look} тренеровки, средний балл {mean_grade}. В общем рейтенге Школа занимает {positions_this_sh} место. По сравнению с прошлым месяцем {dinamik_text}.")
+        bade_text_run = bade_text.add_run(f"В этом месяце просмотрено {count_look} тренировки, средний балл {mean_grade}. В общем рейтинге Школа занимает {positions_this_sh} место. По сравнению с прошлым месяцем {dinamik_text}.")
         bade_text_run.font.size = Pt(14)
         bade_text.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
 
     else:
-        bade_text_run = bade_text.add_run(f"В этом месяце просмотренно {count_look} тренеровки, средний балл {mean_grade}. В общем рейтенге Школа занимает {positions_this_sh} место.")
+        bade_text_run = bade_text.add_run(f"В этом месяце просмотрено {count_look} тренировки, средний балл {mean_grade}. В общем рейтинге школа занимает {positions_this_sh} место.")
         bade_text_run.font.size = Pt(14)
         bade_text.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
 
