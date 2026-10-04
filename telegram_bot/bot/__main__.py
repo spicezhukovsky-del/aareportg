@@ -11,12 +11,14 @@ from aiogram.types import (
 
 from config_reader import get_config, BotConfig
 
+
 dp = Dispatcher()
 
 @dp.message(Command("star"))
 async def cmd_stars(message: Message):
     kb = [
         [KeyboardButton(text="Сгенерировать отчеты для всех школ")],
+        [KeyboardButton(text="Сгенерировать отчет для одной школы")],
         [KeyboardButton(text="Получить данные по одному тренеру")],
         [KeyboardButton(text="Что в разработке?")]
     ]
@@ -27,10 +29,10 @@ async def cmd_stars(message: Message):
     await message.answer("Что делаем?", reply_markup=keyboard)
 
 
-@dp.message(F.text == "Получить данные по одному тренеру")
-async def cmd_stars(message: Message):
-    await message.answer("Введите промежуток времени за который нужно получить данные\nВ формате YYYY-MM-DD где первая дата начало периода, вторая дата - конец периода")
-    pass
+# @dp.message(F.text == "Получить данные по одному тренеру")
+# async def cmd_stars(message: Message):
+#     await message.answer("Введите промежуток времени за который нужно получить данные\nВ формате YYYY-MM-DD где первая дата начало периода, вторая дата - конец периода")
+#     pass
 
 
 @dp.message(F.text.lower() == "сгенерировать отчеты для всех школ")
